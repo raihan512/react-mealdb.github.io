@@ -25,7 +25,7 @@ const router = createBrowserRouter([
           fetch("https://www.themealdb.com/api/json/v1/1/categories.php"),
       },
       {
-        path: "/:categoryName",
+        path: "/categories/category/:categoryName",
         element: <SingleCategory></SingleCategory>,
         loader: ({ params }) =>
           fetch(
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
           ),
       },
       {
-        path: "/meal/:mealId",
+        path: `/categories/category/:category/:mealId`,
         element: <SingleMeal></SingleMeal>,
         loader: ({ params }) =>
           fetch(

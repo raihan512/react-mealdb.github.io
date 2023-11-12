@@ -24,7 +24,7 @@ const Hero = () => {
               type="search"
               id="search-box"
               placeholder="Search any food"
-              className=" absolute left-0 w-full h-full pl-12 focus:outline-0"
+              className=" absolute left-0 w-full h-full pl-6 focus:outline-0"
             />
             <label
               htmlFor="search-box"

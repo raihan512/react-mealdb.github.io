@@ -8,7 +8,8 @@ const SingleCategory = () => {
   return (
     <div className="container mx-auto my-5">
       <h2 className="mb-5 md:mb-10 text-center font-bold text-2xl md:text-4xl">
-        We have {meals.length} items
+        We have {meals.length} items in {window.location.pathname.slice(21)}{" "}
+        category
       </h2>
 
       <div className="grid grid-cols-4 gap-5">
