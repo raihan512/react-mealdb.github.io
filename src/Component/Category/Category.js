@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 const Category = ({ category }) => {
   const { strCategoryThumb, strCategoryDescription, strCategory } = category;
@@ -15,10 +16,13 @@ const Category = ({ category }) => {
             ? strCategoryDescription.slice(0, 100) + "..."
             : strCategoryDescription}
         </p>
-        <button className="flex items-center ml-auto mt-5 text-slate-700 hover:text-[#ff0000]">
+        <Link
+          to={`/${strCategory}`}
+          className="flex items-center ml-auto mt-5 text-slate-700 hover:text-[#ff0000]"
+        >
           See all item
           <ArrowLongRightIcon className="h-6 w-6 ml-2" />
-        </button>
+        </Link>
       </div>
     </div>
   );

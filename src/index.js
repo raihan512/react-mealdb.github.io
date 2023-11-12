@@ -6,6 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./Component/Home/Home";
 import Categories from "./Component/Categories/Categories";
+import SingleCategory from "./Component/SingleCategory/SingleCategory";
+import SingleMeal from "./Component/SingleMeal/SingleMeal";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,22 @@ const router = createBrowserRouter([
         element: <Categories></Categories>,
         loader: () =>
           fetch("https://www.themealdb.com/api/json/v1/1/categories.php"),
+      },
+      {
+        path: "/:categoryName",
+        element: <SingleCategory></SingleCategory>,
+        loader: ({ params }) =>
+          fetch(
+            `https://www.themealdb.com/api/json/v1/1/filter.php?c=${params.categoryName}`
+          ),
+      },
+      {
+        path: "/meal/:mealId",
+        element: <SingleMeal></SingleMeal>,
+        loader: ({ params }) =>
+          fetch(
+            `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.mealId}`
+          ),
       },
     ],
   },
