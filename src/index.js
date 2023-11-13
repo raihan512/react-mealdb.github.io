@@ -8,6 +8,8 @@ import Home from "./Component/Home/Home";
 import Categories from "./Component/Categories/Categories";
 import SingleCategory from "./Component/SingleCategory/SingleCategory";
 import SingleMeal from "./Component/SingleMeal/SingleMeal";
+import Meals from "./Component/Meals/Meals";
+import SearchMeal from "./Component/SearchMeal/SearchMeal";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,22 @@ const router = createBrowserRouter([
       {
         path: `/categories/category/:category/:mealId`,
         element: <SingleMeal></SingleMeal>,
+        loader: ({ params }) =>
+          fetch(
+            `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.mealId}`
+          ),
+      },
+      {
+        path: `/meals/:mealName`,
+        element: <Meals></Meals>,
+        loader: ({ params }) =>
+          fetch(
+            `https://www.themealdb.com/api/json/v1/1/search.php?s=${params.mealName}`
+          ),
+      },
+      {
+        path: `/meals/:mealName/:mealId`,
+        element: <SearchMeal></SearchMeal>,
         loader: ({ params }) =>
           fetch(
             `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.mealId}`

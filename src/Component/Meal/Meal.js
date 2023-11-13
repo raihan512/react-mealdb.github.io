@@ -4,12 +4,17 @@ import { Link } from "react-router-dom";
 
 const Meal = ({ meal }) => {
   const { idMeal, strMealThumb, strMeal } = meal;
+  let link = window.location.pathname.includes("meals");
+  let address;
+  if (link) {
+    address = `/meals/${window.location.pathname.slice(7)}/${idMeal}`;
+  } else {
+    address = `/categories/category/${window.location.pathname.slice(
+      21
+    )}/${idMeal}`;
+  }
   return (
-    <Link
-      to={`/categories/category/${window.location.pathname.slice(
-        21
-      )}/${idMeal}`}
-    >
+    <Link to={address}>
       <div className="border hover:shadow-md">
         <img src={strMealThumb} alt="" />
         <div className="p-2">
