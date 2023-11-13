@@ -36,29 +36,29 @@ const SingleMeal = () => {
   return (
     <div className="container mx-auto my-5">
       <h2 className="text-2xl font-bold mb-3 text-center">{strMeal}</h2>
-      <div className="grid grid-cols-5 gap-10 mt-10">
-        <img src={strMealThumb} className="col-span-2" alt="" />
-        <div className="col-span-3">
-          <p className="grid grid-cols-6 mb-3">
+      <div className="flex flex-col xl:grid xl:grid-cols-5 gap-10 mt-10">
+        <img src={strMealThumb} className="xl:col-span-2" alt="" />
+        <div className="xl:col-span-3">
+          <p className="grid grid-cols-6 gap-28 mb-3">
             <span className="text-lg font-semibold col-span-1">Origin:</span>
             <span className="col-span-5">{strArea}</span>
           </p>
-          <p className="grid grid-cols-6 mb-3">
+          <p className="grid grid-cols-6 gap-28 mb-3">
             <span className="text-lg font-semibold col-span-1">Category:</span>
             <span className="col-span-5">{strCategory}</span>
           </p>
-          <p className="grid grid-cols-6 mb-3">
+          <p className="grid grid-cols-6 gap-28 mb-3">
             <span className="text-lg font-semibold col-span-1">
               Ingredients:
             </span>
             <span className="col-span-5">{ingredients.join(",")}</span>
           </p>
-          <p className="grid grid-cols-6 mb-3">
+          <p className="grid grid-cols-6 gap-28 mb-3">
             <span className="text-lg font-semibold col-span-1">Measure:</span>
             <span className="col-span-5">{measure.join(",")}</span>
           </p>
           {dateModified && (
-            <p className="grid grid-cols-6 mb-3">
+            <p className="grid grid-cols-6 gap-28 mb-3">
               <span className="text-lg font-semibold col-span-1">Updated:</span>
               <span className="col-span-5">{dateModified}</span>
             </p>

@@ -10,7 +10,7 @@ const Categories = () => {
         All Category
       </h2>
 
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid lg:grid-cols-2 gap-5">
         {allCategories.categories.map((category) => (
           <Category key={category.idCategory} category={category}></Category>
         ))}

@@ -16,7 +16,7 @@ const HomeFoods = () => {
       <h2 className="pb-10 md:pb-20 text-center font-bold text-2xl md:text-4xl">
         Your Favourite Food
       </h2>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         {categories.splice(0, 6).map((category) => (
           <Category key={category.idCategory} category={category}></Category>
         ))}
